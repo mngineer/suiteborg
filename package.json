@@ -1,0 +1,27 @@
+{
+  "name": "SuiteBorg",
+  "version": "0.0.0",
+  "private": true,
+  "author": "ryanabloom@aol.com",
+  "description": "WE ARE THE SUITEBORG. YOU WILL BE ASSIMILATED. RESISTANCE IS FUTILE.",
+  "dependencies": {
+    "hubot": "2.19.0",
+    "hubot-google-translate": "^0.2.1",
+    "hubot-heroku-keepalive": "^1.0.3",
+    "hubot-maps": "0.0.3",
+    "hubot-pugme": "^0.1.1",
+    "hubot-redis-brain": "^1.0.0",
+    "hubot-rules": "^1.0.0",
+    "hubot-youtube": "0.1.4",
+    "hubot-scripts": "^2.17.2",
+    "hubot-shipit": "^0.2.1",
+    "hubot-slack": "^4.5.4",
+    "chrono-node": "0.1.11",
+    "moment": "2.22.2",
+    "lodash": "2.4.2",
+    "cheerio": "0.19.0"
+  },
+  "engines": {
+    "node": "10.10.x"
+  }
+}
