@@ -5,4 +5,8 @@ set -e
 npm install
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 
-exec node_modules/.bin/hubot --name "SuiteBorg" --require scripts/hubot-internals "$@"
+# Remove interactivity of these two lines for deployment
+read -p "Bot Name:" BOT_NAME
+read -p "Slack Bot Token:" HUBOT_SLACK_TOKEN
+
+exec node_modules/.bin/hubot --name "${BOT_NAME}" --require scripts/hubot-internals "$@"
