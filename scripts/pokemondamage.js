@@ -1,5 +1,7 @@
 
 class PkmnDamage {
+  constructor() {
+
 
   this.DamageValue = class {
     constructor(name, value){
@@ -280,6 +282,7 @@ class PkmnDamage {
           }
       }
   };
+};
 
   calcuateDamage = (type1, type2, isDefensivePokemon) => {
       let candidates = {
@@ -303,5 +306,6 @@ class PkmnDamage {
       // candidates.none.push(type1Data[defensivePkmn? "damageFrom": "damageTo"].none);
   };
 }
+
 
 module.exports = PkmnDamage;
