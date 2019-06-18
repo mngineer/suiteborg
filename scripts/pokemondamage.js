@@ -284,7 +284,7 @@ class PkmnDamage {
   };
 };
 
-  calcuateDamage = (type1, type2, isDefensivePokemon) => {
+  calcuateDamage(type1, type2, isDefensivePokemon) => {
       let candidates = {
         quad:[],
         double: [],
@@ -306,6 +306,5 @@ class PkmnDamage {
       // candidates.none.push(type1Data[defensivePkmn? "damageFrom": "damageTo"].none);
   };
 }
-
 
 module.exports = PkmnDamage;
