@@ -1,14 +1,14 @@
 
 class PkmnDamage {
 
-  DamageValue = class {
+  let DamageValue = class {
     constructor(name, value){
       this.name = name;
       this.value = value;
     }
 }
 
-  PKMN_DAMAGE = {
+  let PKMN_DAMAGE = {
     "normal":
       {
         "damageTo":
@@ -281,7 +281,7 @@ class PkmnDamage {
       }
   };
 
-  calcuateDamage = (type1, type2, isDefensivePokemon) => {
+  let calcuateDamage = (type1, type2, isDefensivePokemon) => {
       let candidates = {
         quad:[],
         double: [],
