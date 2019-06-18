@@ -22,6 +22,10 @@ module.exports = function(robot) {
     }
   });
   return robot.respond(/error me/, function(msg) {
-    return msg.send(robot.brain.get("borgerror"));
+    let theError = robot.brain.get("borgerror");
+    if (theError === null || theError === "" || theError === undefined){
+      theError = "NO ASSIMILATED ERRORS FOUND."
+    }
+    return msg.send(theError);
   });
 };

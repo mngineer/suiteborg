@@ -18,7 +18,9 @@ let CAT_HEADERS = {
     "x-api-key": process.env.CAT_API_KEY
   }
 };
-let OUR_REPOS = [];
+let OUR_REPOS = ["suiteborg"];
+
+let REPO_FILTER = process.env.ENABLE_REPO_FILTER;
 
 
 
@@ -62,5 +64,15 @@ module.exports = function (robot) {
     let bombSize = Number.parseInt(msg.match[2]) || 5;
     if (bombSize > 25) { bombSize = 25;}
     catApiCall(msg, bombSize);
+  });
+
+  robot.hear(/github\.com\/mngineer\/(.*)\/pull\/(\d+)/, (msg) => {
+    let repo = msg.match[1];
+    let user = robot.brain.userForId(msg.envelope.user.id);
+    let isOwnRepo = REPO_FILTER ? OUR_REPOS.includes(repo): true;
+    if (!isOwnRepo || true ){ // user.email_address === "" after || for personalization
+      return;
+    }
+    catApiCall(msg, 1);
   });
 };

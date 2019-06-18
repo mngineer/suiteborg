@@ -12,7 +12,9 @@
 //   hubot (dog|doggo|puppy|pupper) bomb (number)  - get number dogs
 
 let DOG_API_URL = "https://api.thedogapi.com/v1/images/search";
-let OUR_REPOS = [];
+let OUR_REPOS = ["suiteborg"];
+let REPO_FILTER = process.env.ENABLE_REPO_FILTER;
+
 
 let DOG_HEADERS = {
   headers: {
@@ -60,5 +62,17 @@ module.exports = function (robot) {
       if (bombSize > 25) { bombSize = 25;}
       dogApiCall(msg, bombSize);
     });
+
+  robot.hear(/github\.com\/mngineer\/(.*)\/pull\/(\d+)/, (msg) => {
+    let repo = msg.match[1];
+    let user = robot.brain.userForId(msg.envelope.user.id);
+    let isOwnRepo = REPO_FILTER ? OUR_REPOS.includes(repo): true;
+    if (!isOwnRepo){
+      return;
+    }
+    if(true) { //include user.email_address === "" for personalization
+      dogApiCall(msg, 1);
+    }
+  });
 
 };
