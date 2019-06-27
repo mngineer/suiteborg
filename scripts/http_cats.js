@@ -16,7 +16,7 @@
 module.exports = function (robot) {
     robot.respond(/http (\d\d\d)/i, (msg) => {
       let code = msg.match[1];
-      msg.http("https://http.cat/${code}.jpg").get()((err, resp, body) => {
+      msg.http(`https://http.cat/${code}.jpg`).get()((err, resp, body) => {
         if (err) {
           throw err;
         }
