@@ -17,7 +17,7 @@
     "hubot-slack": "^4.5.4",
     "chrono-node": "0.1.11",
     "moment": "2.22.2",
-    "lodash": "4.17.13",
+    "lodash": "4.17.19",
     "cheerio": "0.19.0"
   },
   "engines": {
